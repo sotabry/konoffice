@@ -27,7 +27,7 @@ type InterpretActionResponse = {
 
 type RecorderMode = "prompt" | "action";
 
-export function UnderstudioApp() {
+export function KonofficeApp() {
   const [phase, setPhase] = useState<Phase>("intro");
   const [promptText, setPromptText] = useState(
     "A mushroom designer has to survive an all-day planning ritual about a product nobody understands.",
@@ -42,7 +42,7 @@ export function UnderstudioApp() {
   const recorder = useAudioRecorder();
 
   useEffect(() => {
-    const saved = window.localStorage.getItem("understudio:lastRun");
+    const saved = window.localStorage.getItem("konoffice:lastRun");
     if (!saved) {
       return;
     }
@@ -96,7 +96,7 @@ export function UnderstudioApp() {
         });
         const data = (await response.json()) as StartRunResponse;
         const run = runSpecSchema.parse(data.run);
-        window.localStorage.setItem("understudio:lastRun", JSON.stringify(run));
+        window.localStorage.setItem("konoffice:lastRun", JSON.stringify(run));
         setGame(createInitialGameState(run));
         setPhase("encounter");
         setLastWarning(data.warning ?? (data.usedFallback ? "Using local fallback run. Add OPENAI_API_KEY for generated runs." : null));
@@ -121,7 +121,7 @@ export function UnderstudioApp() {
         const resolved = resolveAction(current, attempt).state;
         if (resolved.phase === "victory") {
           window.localStorage.setItem(
-            "understudio:bestResult",
+            "konoffice:bestResult",
             JSON.stringify({
               title: resolved.run.runTitle,
               summary: resolved.run.shareSummary,
@@ -251,7 +251,7 @@ export function UnderstudioApp() {
           {!game ? (
             <div className="intro-overlay">
               <div className="intro-card">
-                <h1>UnderstudioHub</h1>
+                <h1>konoffice</h1>
                 <p>
                   Corporate language is combat. Describe a workplace nightmare, then survive three
                   meetings by speaking professionally enough to weaponize it.
@@ -282,7 +282,7 @@ export function UnderstudioApp() {
 
         <aside className="side-panel">
           <section className="panel brand-card">
-            <h2 className="brand-title">Say it professionally.</h2>
+            <h2 className="brand-title">Survive the office.</h2>
             <p className="brand-subtitle">Push, Deflect, or Align your way through a cute corporate dungeon.</p>
           </section>
 

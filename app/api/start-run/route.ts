@@ -47,13 +47,13 @@ export async function POST(request: Request) {
         },
         {
           role: "user",
-          content: `Create a 3-encounter UnderstudioHub run from this player prompt: ${prompt}`,
+          content: `Create a 3-encounter konoffice run from this player prompt: ${prompt}`,
         },
       ],
       text: {
         format: {
           type: "json_schema",
-          name: "understudio_run_spec",
+          name: "konoffice_run_spec",
           strict: true,
           schema: runSpecJsonSchema,
         },

@@ -36,7 +36,7 @@ export function GameCanvas({ game }: GameCanvasProps) {
     return () => observer.disconnect();
   }, [game]);
 
-  return <canvas ref={canvasRef} className="game-canvas" aria-label="UnderstudioHub battle scene" />;
+  return <canvas ref={canvasRef} className="game-canvas" aria-label="konoffice battle scene" />;
 }
 
 function drawScene(context: CanvasRenderingContext2D, width: number, height: number, game: GameState | null) {
@@ -46,7 +46,7 @@ function drawScene(context: CanvasRenderingContext2D, width: number, height: num
 
   if (!game) {
     drawHero(context, width * 0.5 - 70, height * 0.62, 1.15);
-    drawSticker(context, width * 0.5, height * 0.2, "Say it professionally");
+    drawSticker(context, width * 0.5, height * 0.2, "survive the office");
     return;
   }
 

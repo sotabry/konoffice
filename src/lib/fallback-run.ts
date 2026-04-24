@@ -5,7 +5,7 @@ export function createFallbackRun(prompt = "survive a normal workday"): RunSpec 
 
   return {
     runTitle: "Quarterly Alignment Dungeon",
-    companyName: "UnderstudioHub",
+    companyName: "konoffice",
     department: "Narrative Operations",
     crisis: `A routine sync has mutated into a full-company initiative about ${cleanPrompt}.`,
     intro:
@@ -77,7 +77,7 @@ export function createFallbackRun(prompt = "survive a normal workday"): RunSpec 
     deathText:
       "You are absorbed into an evergreen working group with no clear owner.",
     shareSummary:
-      "Survived UnderstudioHub by weaponizing corporate language against the VP of Ambiguity.",
+      "Survived konoffice by weaponizing corporate language against the VP of Ambiguity.",
   };
 }
 

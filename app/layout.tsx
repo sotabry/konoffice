@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "UnderstudioHub",
+  title: "konoffice",
   description: "A satirical voice roguelike where corporate language is combat.",
 };
 

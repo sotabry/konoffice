@@ -1,5 +1,5 @@
-import { UnderstudioApp } from "@/components/understudio-app";
+import { KonofficeApp } from "@/components/understudio-app";
 
 export default function Home() {
-  return <UnderstudioApp />;
+  return <KonofficeApp />;
 }
